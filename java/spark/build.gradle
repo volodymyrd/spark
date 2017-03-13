@@ -3,12 +3,15 @@ defaultTasks 'clean', 'build'
 subprojects {
     ext {
         versions = [
-            junit : '4.12'
+                junit     : '4.12',
+                spark_core: '2.1.0'
         ]
 
         libs = [:]
 
         libs.test = ["junit:junit:${versions.junit}"]
+
+        libs.spark_core = ["org.apache.spark:spark-core_2.11:${versions.spark_core}"]
     }
 
     // Configuring java
@@ -32,7 +35,7 @@ subprojects {
     }
 
     task wrapper(type: Wrapper) {
-	    gradleVersion = '2.10'
+        gradleVersion = '2.10'
     }
 
     buildDir = 'target'

@@ -1,3 +1,5 @@
+
 dependencies {
+    compile libs.spark_core
     testCompile libs.test
 }
